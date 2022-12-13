@@ -1,20 +1,22 @@
 //스크랩하기  POST /api/scrap
-const postScrap = async(req, res) => {
-
+const postScrap = async() => {
+    return;
 };
 
 //스크랩한 게시글 리스트 가져오기  GET /api/scrap
-const getScrap = async(req, res) => {
-
+const getScrap = async() => {
+    return;
 };
 
 
 //스크랩 여부 가져오기  GET /api/scrap/:postId
-const getIsScrap = async(req, res) => {
-
+const getIsScrap = async() => {
+    return;
 };
 
 
 export default {
-
+    postScrap,
+    getScrap,
+    getIsScrap
 }

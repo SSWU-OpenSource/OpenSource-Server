@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import scrapController from '../controller/scrapController';
+import scrapController from '../controller/scrapController.js';
 
 const router = Router();
 
@@ -13,4 +13,5 @@ router.get('/', scrapController.getScrap);
 router.get('/:postId', scrapController.getIsScrap);
 
 
-module.exports = router;
+//module.exports = router;
+export default router;

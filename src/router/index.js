@@ -1,10 +1,10 @@
-import express from 'express';
-import postRouter from './postRouter';
-import scrapRouter from './scrapRouter';
+import { Router } from 'express';
+import postRouter from './postRouter.js';
+import scrapRouter from './scrapRouter.js';
 
-const router = express.Router();
+const router = Router();
 
 router.use('/post', postRouter);
 router.use('/scrap', scrapRouter);
 
-module.exports = router;
+export default router;

@@ -1,4 +1,4 @@
-import postService from "./postService";
-import scrapService from "./scrapService";
+import postService from "./postService.js";
+import scrapService from "./scrapService.js";
 
 export { postService, scrapService };

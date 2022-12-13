@@ -1,4 +1,4 @@
-import { scrapService } from "../service";
+import scrapService from "../service/scrapService.js";
 
 //스크랩하기  POST /api/scrap
 const postScrap = async(req, res) => {
