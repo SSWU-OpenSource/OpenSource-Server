@@ -1,3 +1,9 @@
+/**  DB 연결 부분 - MySQL 서버 파면 주석 제거하기 **/
+//import dbConfig from "../db/dbConfig.js";
+// const pool = await dbConfig;
+// const connection = await pool.getConnection();
+
+
 //스크랩하기  POST /api/scrap
 const postScrap = async() => {
     return;

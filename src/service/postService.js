@@ -21,7 +21,6 @@ const getPostDetail = async() => {
     // const result = await connection.query(query);
     // //Connection 할당 해제
     // connection.release();
-    //console.log(result);
 
     return '안녕';
 };
