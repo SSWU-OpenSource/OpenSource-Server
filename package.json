@@ -8,7 +8,9 @@
         "dev": "nodemon"
     },
     "dependencies": {
-        "express": "^4.18.2"
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "promise-mysql": "^5.2.0"
     },
     "devDependencies": {
         "node": "^19.2.0",
