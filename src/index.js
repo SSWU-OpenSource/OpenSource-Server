@@ -11,7 +11,7 @@ app.get('/', (req, res, next) => {
     res.send('express server');
 });
 
-app.listen(8000, () => {
+app.listen(3000, () => {
     console.log(`
           #############################################
               Server listening on port: 8000
