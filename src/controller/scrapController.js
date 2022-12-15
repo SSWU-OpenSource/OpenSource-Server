@@ -7,6 +7,8 @@ const postScrap = async(req, res) => {
 
 //스크랩한 게시글 리스트 가져오기  GET /api/scrap
 const getScrap = async(req, res) => {
+    const data = await scrapService.getScrap();
+    return res.status(200).json({ status: 200, message: '스크랩한 게시글 리스트 가져오기 성공', data});
 
 };
 
