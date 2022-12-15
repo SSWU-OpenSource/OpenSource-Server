@@ -16,7 +16,7 @@ stages {
     stage("Build image") {
 			steps { 
 				script {
-          myapp = docker.build("sunseo18/opensource_node:${env.BUILD_ID}")
+          myapp = docker.build("sunseo18/opensource_node:${env.BUILD_ID}").inside { vi '.env' }
         }
 			} 
 		}
