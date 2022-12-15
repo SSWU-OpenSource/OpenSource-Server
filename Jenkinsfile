@@ -5,7 +5,6 @@ pipeline {
     CLUSTER_NAME = 'k8s'
     LOCATION = 'asia-northeast3-a'
     CREDENTIALS_ID = 'k8s'
-    db_host = credentials('db_host')
 	}
 stages {
     stage("Checkout code") {
@@ -16,7 +15,7 @@ stages {
     stage("Build image") {
 			steps { 
 				script {
-          myapp = docker.build("sunseo18/opensource_node:${env.BUILD_ID}").inside { vi '.env' }
+          myapp = docker.build("sunseo18/opensource_node:${env.BUILD_ID}").withRun('-e "db_host=mysql db_password=password db_user=root"')
         }
 			} 
 		}
