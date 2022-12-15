@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: express
-        image: "sunseo18/opensource_node:latest"
+        image: sunseo18/opensource_node:latest
         env:
         - name: DB_HOST
           valueFrom:
