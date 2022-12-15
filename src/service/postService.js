@@ -13,17 +13,12 @@ const postPost = async() => {
 };
 
 //게시글 상세보기  GET /api/post/:postId
-const getPostDetail = async(postId) => {
-    const pool = await dbConfig;
-    const connection = await pool.getConnection();
-    const query = 'SELECT * FROM postTbl';
-
-    const result = await connection.query(query, postId);
-    console.log(result);
-    //Connection 할당 해제
-    connection.release();
-
-    return '안녕';
+const getPostDetail = async() => {
+    return {
+        "id": 1,
+        "title": "첫 번째 게시글 제목",
+        "content": "첫 번째 게시글 내용"
+    };
 };
 
 
