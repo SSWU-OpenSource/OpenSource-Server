@@ -5,6 +5,7 @@ pipeline {
     CLUSTER_NAME = 'k8s'
     LOCATION = 'asia-northeast3-a'
     CREDENTIALS_ID = 'k8s'
+    db_host = credentials('db_host')
 	}
 stages {
     stage("Checkout code") {
