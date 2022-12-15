@@ -4,7 +4,7 @@ pipeline {
     PROJECT_ID = 'top-chain-365110'
     CLUSTER_NAME = 'k8s'
     LOCATION = 'asia-northeast3-a'
-    CREDENTIALS_ID = 'dockercredential'
+    CREDENTIALS_ID = 'k8s'
 	}
 stages {
     stage("Checkout code") {
@@ -22,7 +22,7 @@ stages {
 		stage("Push image") {
       steps {
         script {
-          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
+          docker.withRegistry('https://registry.hub.docker.com', 'dockercredential') {
             myapp.push("latest")
             myapp.push("${env.BUILD_ID}")
 					} 
@@ -34,9 +34,9 @@ stages {
         branch 'main'
       }
 			steps{
-				sh "sed -i 's/hello:latest/hello:${env.BUILD_ID}/g' deployment.yaml"
+				sh "sed -i 's/sunseo18/opensource_node:latest/opensource_node:${env.BUILD_ID}/g' deployment.yaml"
 				step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME,
-location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID,
+location: env.LOCATION, manifestPattern: 'deployment.yml', credentialsId: env.CREDENTIALS_ID,
 verifyDeployments: true])
 			} 
 		}
