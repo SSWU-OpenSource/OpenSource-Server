@@ -36,8 +36,7 @@ stages {
 			steps{
 				sh "sed -i 's/opensource_node:latest/opensource_node:${env.BUILD_ID}/g' deployment.yml"
 				step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME,
-location: env.LOCATION, manifestPattern: 'deployment.yml', credentialsId: env.CREDENTIALS_ID,
-verifyDeployments: true])
+location: env.LOCATION, manifestPattern: 'deployment.yml', credentialsId: env.CREDENTIALS_ID])
 			} 
 		}
 	}
