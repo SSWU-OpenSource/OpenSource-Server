@@ -1,6 +1,3 @@
-import dbConfig from "../db/dbConfig.js";
-
-
 //스크랩하기  POST /api/scrap
 const postScrap = async() => {
     return;
