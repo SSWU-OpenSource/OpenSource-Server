@@ -15,24 +15,24 @@ spec:
       containers:
       - name: express
         image: "sunseo18/opensource_node:latest"
-				env:
-				- name: DB_HOST
-					valueFrom:
+        env:
+        - name: DB_HOST
+          valueFrom:
             secretKeyRef:
               name: node-mysql
               key: db_host
         - name: DB_USER
-					valueFrom:
+          valueFrom:
             secretKeyRef:
               name: node-mysql
               key: db_user
         - name: DB_PASSWORD
-					valueFrom:
+          valueFrom:
             secretKeyRef:
               name: node-mysql
               key: db_password
-				- name: DB_DATABASE
-					valueFrom:
+        - name: DB_DATABASE
+          valueFrom:
             secretKeyRef:
               name: node-mysql
               key: db_database
