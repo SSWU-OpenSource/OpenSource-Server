@@ -15,6 +15,7 @@ spec:
       containers:
       - name: express
         image: sunseo18/opensource_node:latest
+        imagePullPolicy: Always
         env:
         - name: DB_HOST
           valueFrom:
