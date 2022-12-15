@@ -39,3 +39,31 @@ spec:
               key: db_database
         ports:
         - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-svc
+spec:
+  selector:
+    app: node
+  ports:
+    - port: 80
+      targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-ingress
+spec:
+  rules:
+  - host: opensource.sample.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: node-svc
+            port:
+              number: 80
