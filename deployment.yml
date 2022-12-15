@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node
+  template:
+    metadata:
+      labels:
+        app: node
+    spec:
+      containers:
+      - name: express
+        image: "sunseo18/opensource_node:latest"
+				env:
+				- name: DB_HOST
+					valueFrom:
+            secretKeyRef:
+              name: node-mysql
+              key: db_host
+        - name: DB_USER
+					valueFrom:
+            secretKeyRef:
+              name: node-mysql
+              key: db_user
+        - name: DB_PASSWORD
+					valueFrom:
+            secretKeyRef:
+              name: node-mysql
+              key: db_password
+				- name: DB_DATABASE
+					valueFrom:
+            secretKeyRef:
+              name: node-mysql
+              key: db_database
+        ports:
+        - containerPort: 3000
