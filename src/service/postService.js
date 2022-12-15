@@ -27,8 +27,14 @@ const postPost = async() => {
 };
 
 //게시글 상세보기  GET /api/post/:postId
-const getPostDetail = async(postId) => {
-    return;
+
+const getPostDetail = async() => {
+    return {
+        "id": 1,
+        "title": "첫 번째 게시글 제목",
+        "content": "첫 번째 게시글 내용"
+    };
+
 };
 
 

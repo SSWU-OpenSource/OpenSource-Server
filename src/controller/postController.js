@@ -13,9 +13,13 @@ const postPost = async(req, res) => {
 
 //게시글 상세보기  GET /api/post/:postId
 const getPostDetail = async(req, res) => {
-    const data = await postService.getPostDetail();
-
-    return res.status(200).json({ status: 200, message: '게시글 상세보기 성공', data });
+    try {
+        const data = await postService.getPostDetail();
+        return res.status(200).json({ status: 200, message: '채은: 게시글 상세보기 성공', data });
+    } catch (error) {
+        console.log(error);
+        return res.status(200).json({ status: 500, message: '서버 에러' });
+    }
 };
 
 export default {
