@@ -13,14 +13,15 @@ const postPost = async() => {
 };
 
 //게시글 상세보기  GET /api/post/:postId
-const getPostDetail = async() => {
-    // /**  DB 연결 부분 - MySQL 서버 파면 주석 제거하기 **/
-    // const pool = await dbConfig;
-    // const connection = await pool.getConnection();
-    // const query = 'SELECT * FROM user';
-    // const result = await connection.query(query);
-    // //Connection 할당 해제
-    // connection.release();
+const getPostDetail = async(postId) => {
+    const pool = await dbConfig;
+    const connection = await pool.getConnection();
+    const query = 'SELECT * FROM postTbl';
+
+    const result = await connection.query(query, postId);
+    console.log(result);
+    //Connection 할당 해제
+    connection.release();
 
     return '안녕';
 };
