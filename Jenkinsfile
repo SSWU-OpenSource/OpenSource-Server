@@ -15,7 +15,7 @@ stages {
     stage("Build image") {
 			steps { 
 				script {
-          myapp = docker.build("sunseo18/opensource_node:${env.BUILD_ID}", '-e "db_host=mysql db_password=password db_user=root"')
+          myapp = docker.build("sunseo18/opensource_node:${env.BUILD_ID}", '-e db_host=mysql -e db_password=password -e db_user=root')
         }
 			} 
 		}
